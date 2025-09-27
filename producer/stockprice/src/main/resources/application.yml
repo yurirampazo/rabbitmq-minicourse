@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: stockprice
+  rabbitmq:
+    port: 5672
+    username: admin
+    password: 123456
+
+logging.level.root: info
