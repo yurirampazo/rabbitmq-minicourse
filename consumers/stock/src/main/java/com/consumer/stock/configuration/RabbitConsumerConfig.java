@@ -32,7 +32,7 @@ public class RabbitConsumerConfig {
 
   @Bean
   public RabbitListenerContainerFactory<DirectMessageListenerContainer> rabbitListenerContainerFactory(
-      ConnectionFactory connectionFactory
+      ConnectionFactory connectionFactory, MessageConverter messageConverter
   ) {
     DirectRabbitListenerContainerFactory factory = new DirectRabbitListenerContainerFactory();
     factory.setConnectionFactory(connectionFactory);
@@ -47,6 +47,7 @@ public class RabbitConsumerConfig {
 
     // Using FatalStrategy implementation
     factory.setErrorHandler(errorHandler());
+    factory.setMessageConverter(messageConverter);
 
     return factory;
   }

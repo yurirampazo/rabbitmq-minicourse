@@ -14,7 +14,8 @@ public class StockConsumer {
 
   @RabbitListener(queues = RabbitMqConstants.STOCK_QUEUE)
   public void stockConsumer(StockDto stockDto) {
-  logger.info("Received Message From Stock Queue: {}\n---------------", stockDto.toString());
+    logger.info("Received Message From Stock Queue: {}\n---------------", stockDto.toString());
 
+    //TODO Do something with the message!
   }
 }
