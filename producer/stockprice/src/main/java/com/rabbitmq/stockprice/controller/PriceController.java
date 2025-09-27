@@ -1,8 +1,9 @@
 package com.rabbitmq.stockprice.controller;
 
-import com.rabbitmq.stockprice.constants.RabbitMqConstants;
-import com.rabbitmq.stockprice.dto.PriceDto;
+
 import com.rabbitmq.stockprice.service.RabbitMqService;
+import org.rabbitdomain.constants.RabbitMqConstants;
+import org.rabbitdomain.dto.PriceDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,8 @@ public class PriceController {
   private RabbitMqService rabbitMqService;
 
   @PutMapping
-  private ResponseEntity<Void> updatePrice(@RequestBody PriceDto priceDto) {
+  public ResponseEntity<Void> updatePrice(@RequestBody PriceDto priceDto) {
     rabbitMqService.sendMessage(RabbitMqConstants.PRICE_QUEUE, priceDto);
     return ResponseEntity.ok().build();
   }
-
 }

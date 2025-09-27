@@ -1,4 +1,4 @@
-package com.rabbitmq.stockprice.constants;
+package org.rabbitdomain.constants;
 
 public final class RabbitMqConstants {
   public static final String STOCK_QUEUE = "STOCK";
