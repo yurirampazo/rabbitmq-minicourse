@@ -6,5 +6,9 @@ spring:
     port: 5672
     username: admin
     password: 123456
+    listener:
+      type: direct  # Defines listener type, direct is the default
+      direct:
+        prefetch: 2 # Maximum number of messages being processed at the same time by a consumer
 
 logging.level.root: info
