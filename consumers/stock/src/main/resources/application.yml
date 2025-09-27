@@ -6,13 +6,13 @@ spring:
     port: 5672
     username: admin
     password: 123456
-    listener:
-      type: direct  # Defines listener type, direct is the default
-      simple.acknowledge-mode: auto # If no exception is thrown, acknowledges automatic confimation of message to rabbitmq
-      direct:
-        prefetch: 2 # Maximum number of messages being processed at the same time by a consumer
-        retry:
-          enabled: true
-          max-attempts: 3
+#    listener:
+#      type: direct  # Defines listener type, direct is the default
+#      simple.acknowledge-mode: auto # If no exception is thrown, acknowledges automatic confimation of message to rabbitmq
+#      direct:
+#        prefetch: 2 # Maximum number of messages being processed at the same time by a consumer
+#        retry:
+#          enabled: true
+#          max-attempts: 3
 
 logging.level.root: info
