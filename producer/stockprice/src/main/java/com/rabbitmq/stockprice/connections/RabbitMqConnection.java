@@ -1,9 +1,9 @@
-/**
- *  Commented because was first contact with queues,
- *  used better approach with spring configuration and beans at
- *  src/main/java/com/rabbitmq/stockprice/configuration/RabbitMqConfig.java
- */
-
+///**
+// *  Commented because was first contact with queues,
+// *  used better approach with spring configuration and beans at
+// *  src/main/java/com/rabbitmq/stockprice/configuration/RabbitMqConfig.java
+// */
+//
 //package com.rabbitmq.stockprice.connections;
 //
 //import jakarta.annotation.PostConstruct;
@@ -61,7 +61,7 @@
 //   * Adding a queue to rabbitmq
 //   *
 //   */
-//  @PostConstruct //Execute after spring starts and construct the component
+//  @PostConstruct // Execute after spring starts and construct the component
 //  private void addQueue() {
 //    Queue stockQueue = this.queue(RabbitMqConstants.STOCK_QUEUE);
 //    var priceQueue = this.queue(RabbitMqConstants.PRICE_QUEUE);
@@ -71,7 +71,7 @@
 //    Binding stockBinding = this.relateQueueAndExchange(stockQueue, exchange);
 //    var priceBinding = this.relateQueueAndExchange(priceQueue, exchange);
 //
-//    //Creating queues on rabbitmq
+////    Creating queues on rabbitmq
 //    amqpAdmin.declareQueue(stockQueue);
 //    amqpAdmin.declareQueue(priceQueue);
 //

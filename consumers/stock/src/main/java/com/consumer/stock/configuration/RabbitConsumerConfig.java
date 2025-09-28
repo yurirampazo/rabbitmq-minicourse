@@ -1,7 +1,7 @@
 package com.consumer.stock.configuration;
 
 import com.consumer.stock.consumer.CustomErrorStrategy;
-import com.consumer.stock.exception.ProcessingErrorHandler;
+//import com.consumer.stock.exception.ProcessingErrorHandler;
 import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.rabbit.config.DirectRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.listener.ConditionalRejectingErrorHandler;
@@ -40,6 +40,7 @@ public class RabbitConsumerConfig {
     factory.setPrefetchCount(3);
     factory.setRetryTemplate(retryTemplate());
     factory.setConsumersPerQueue(1);
+    factory.setDefaultRequeueRejected(false);
     //factory.setGlobalQos(true);
 
     // Using ErrorHandler
@@ -48,7 +49,6 @@ public class RabbitConsumerConfig {
     // Using FatalStrategy implementation
     factory.setErrorHandler(errorHandler());
     factory.setMessageConverter(messageConverter);
-
     return factory;
   }
 
